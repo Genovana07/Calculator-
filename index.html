@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="container">
+      <input type="text" id="result" placeholder="0" ><br>
+      
+      <input type="button" value="1" onclick="appendNum(1)">
+      <input type="button" value="2" onclick="appendNum(2)">
+      <input type="button" value="3" onclick="appendNum(3)">
+      <input class="btn"type="button" value="+" onclick="appendNum('+')"><br>
+
+      <input type="button" value="4" onclick="appendNum(4)">
+      <input type="button" value="5" onclick="appendNum(5)">
+      <input type="button" value="6" onclick="appendNum(6)">
+      <input class="btn"type="button" value="-" onclick="appendNum('-')"><br>
+
+      <input type="button" value="7" onclick="appendNum(7)">
+      <input type="button" value="8" onclick="appendNum(8)">
+      <input type="button" value="9" onclick="appendNum(9)">
+      <input class="btn"type="button" value="x" onclick="appendNum('*')"><br>
+      
+      <input type="button" value="." onclick="appendNum('.')">
+      <input type="button" value="0" onclick="appendNum(0)">
+      <input class="btn"type="button" value="=" onclick="calculate()">
+      <input class="btn"type="button" value="/" onclick="appendNum('/')"><br>
+      <input class = "delete" type="button" value="Del" onclick="Del()">
+      <input type="button" value="c" onclick="clearInput()">
+      <input type="button" value="%" onclick="appendNum('%')">
+      
+    </div>
+    <script>
+      let result = document.getElementById("result")
+      function appendNum(num){
+        result.value += num;
+      }
+      function calculate(){
+        try{
+          result.value = eval
+          (result.value);
+        }
+        
+        catch(err)
+        {
+            alert("Sorry Invalid")
+        }
+      }
+      function clearInput(){
+        result.value ="";
+
+      }
+
+      function Del(){
+        result.value = result.value
+        .slice(0, -1);
+      }
+      
+      
+    </script>
+</body>
+</html>
